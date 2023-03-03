@@ -1,0 +1,28 @@
+
+#grid-container {
+    width: fit-content;
+    height: auto;
+    /* display: grid; */
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 1px;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    border: 1px solid gray;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block;
+}
+
+.cell:hover {
+    background-color: crimson;
+}
+
+#btnClear {
+    display: none;
+}
