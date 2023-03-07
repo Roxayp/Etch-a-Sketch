@@ -46,19 +46,13 @@ function clearGrid() {
 }
 // create a function that changes the color of the grid when the mouse hovers over it
 // Done in CSS
-
+const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+document.getElementsByClassName(".cell").addEventListener("mouseover", function () {
+    document.getElementsByClassName(".cell").style.backgroundColor = "#" + randomColor;
+    color.innerHTML = "#" + randomColor;
+});
 
 // create a button that changes the color of the grid to a chosen color on click
-const colorPicker = document.getElementById("colorPicker");
-const cells = document.getElementsByClassName("cell");
-
-    for (let i = 0; i < cells.length; i++) {
-        cells[i].addEventListener("click", function() {
-            cells[i].style.backgroundColor = colorPicker.value;
-        });
-    }
-
-
 
 // create a button that changes the color of the grid to a black and white gradient
 

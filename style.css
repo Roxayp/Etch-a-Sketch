@@ -18,10 +18,10 @@
     min-height: 20px;
     display: inline-block;
 }
-
+/* 
 .cell:hover {
     background-color: crimson;
-}
+} */
 
 #btnClear {
     display: none;
