@@ -33,6 +33,39 @@ function makeGrid() {
     }
     document.getElementById("btnClear").style.display = "inline";
     document.getElementById("btnCreate").style.display = "none";
+
+// create a function that changes the color of the grid when the mouse hovers over it
+
+function randomColor() {
+    let color = [];
+    for (let i = 0; i < 3; i++) {
+      color.push(Math.floor(Math.random() * 256));
+    }
+    return 'rgb(' + color.join(', ') + ')';
+}
+const cells = document.querySelectorAll(".cell");
+
+cells.forEach(cell => {
+    cell.addEventListener("mouseover", () => {
+        cell.style.backgroundColor = randomColor();
+    });
+
+    // cell.addEventListener("mouseout", () => {
+    //     cell.style.backgroundColor = "white";
+    // });
+});
+
+function userColor() {
+    let color = document.getElementById("colorPicker").value;
+    return color;
+}
+cells.forEach(cell => {
+    cell.addEventListener("mouseover", () => {
+        cell.style.backgroundColor = userColor();
+    }
+    );
+});
+
 }
 // create a button that clears the grid and asks the user for a new grid size
 function clearGrid() {
@@ -44,13 +77,8 @@ function clearGrid() {
     document.getElementById("btnClear").style.display = "none";
     document.getElementById("btnCreate").style.display = "inline";
 }
-// create a function that changes the color of the grid when the mouse hovers over it
-// Done in CSS
-const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-document.getElementsByClassName(".cell").addEventListener("mouseover", function () {
-    document.getElementsByClassName(".cell").style.backgroundColor = "#" + randomColor;
-    color.innerHTML = "#" + randomColor;
-});
+
+
 
 // create a button that changes the color of the grid to a chosen color on click
 

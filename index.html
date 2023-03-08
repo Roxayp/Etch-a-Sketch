@@ -4,27 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-    <h1>Etch-a-Sketch!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 left">
+                <h1>Etch-a-Sketch!</h1>
 
-    <h2>Choose the Grid Size</h2>
-    <form id="sizePicker">
-        Grid Height:
-        <input type="number" id="inputHeight" name="height" min="1" max="16" value="1">
-        Grid Width:
-        <input type="number" id="inputWidth" name="width" min="1" max="16" value="1">
-        <input type="button" id="btnCreate" onclick="makeGrid()" value="Create Grid">
-        <input type="button" id="btnClear" onclick="clearGrid()" value="Clear Grid">
-    </form>
+                <h2>Choose the Grid Size</h2>
+                <form id="sizePicker">
+                    Grid Height:
+                    <input type="number" id="inputHeight" name="height" min="1" max="16" value="1">
+                    <br><br>
+                    Grid Width:
+                    <input type="number" id="inputWidth" name="width" min="1" max="16" value="1">
+                    <br><br>
+                    <input type="button" id="btnCreate" onclick="makeGrid()" value="Create Grid">
+                    <input type="button" id="btnClear" onclick="clearGrid()" value="Clear Grid">
+                </form>
 
-    <h2>Pick a Color</h2>
-    <input type="color" id="colorPicker" name="colorPicker" value="#000000">
-
-    <h2>Draw!</h2>
-    <div id="grid-container"></div>
+                <h2>Pick a Color</h2>
+                <input type="color" id="colorPicker" name="colorPicker" value="">
+                <!-- <h2>Or Use the Rainbow!</h2>
+                <input type="button" id="btnRainbow" value="Rainbow"> -->
+            </div>
+            <div class="col-md-6 right">
+                <h2>Draw!</h2>
+                <div id="grid-container"></div>
+            </div>
+            
+        </div>
+    </div>
 
     <script src="script.js"></script>
     

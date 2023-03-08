@@ -6,6 +6,15 @@
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     gap: 1px;
+
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    display: inline-block;
 }
 
 .row {
