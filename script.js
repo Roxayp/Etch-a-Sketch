@@ -34,31 +34,29 @@ function makeGrid() {
     document.getElementById("btnClear").style.display = "inline";
     document.getElementById("btnCreate").style.display = "none";
 
-// create a function that changes the color of the grid when the mouse hovers over it
-
-function randomColor() {
-    let color = [];
-    for (let i = 0; i < 3; i++) {
-      color.push(Math.floor(Math.random() * 256));
+    // create a function that changes the color of the grid when the mouse hovers over it
+    if (document.getElementById("btnRainbow").addEventListener("click", () => {
+        const cells = document.querySelectorAll(".cell");
+        cells.forEach(cell => {
+            cell.addEventListener("mouseover", () => {
+                cell.style.backgroundColor = randomColor();
+            });
+        });
+    }));
+    function randomColor() {
+        let color = [];
+        for (let i = 0; i < 3; i++) {
+        color.push(Math.floor(Math.random() * 256));
+        }
+        return 'rgb(' + color.join(', ') + ')';
     }
-    return 'rgb(' + color.join(', ') + ')';
-}
-const cells = document.querySelectorAll(".cell");
 
-cells.forEach(cell => {
-    cell.addEventListener("mouseover", () => {
-        cell.style.backgroundColor = randomColor();
-    });
-
-    // cell.addEventListener("mouseout", () => {
-    //     cell.style.backgroundColor = "white";
-    // });
-});
 
 function userColor() {
     let color = document.getElementById("colorPicker").value;
     return color;
 }
+const cells = document.querySelectorAll(".cell");
 cells.forEach(cell => {
     cell.addEventListener("mouseover", () => {
         cell.style.backgroundColor = userColor();
